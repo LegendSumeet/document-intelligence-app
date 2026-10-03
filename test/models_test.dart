@@ -1,4 +1,8 @@
-import 'package:documentintelligence/models.dart';
+import 'package:documentintelligence/core/services/citation_formatting.dart';
+import 'package:documentintelligence/data/models/citation_item.dart';
+import 'package:documentintelligence/data/models/document_item.dart';
+import 'package:documentintelligence/data/models/page_evidence.dart';
+import 'package:documentintelligence/data/models/query_result.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

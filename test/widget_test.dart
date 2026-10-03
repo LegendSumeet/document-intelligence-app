@@ -17,5 +17,7 @@ void main() {
     await tester.pump();
 
     expect(find.textContaining('Missing API_TOKEN'), findsOneWidget);
+    expect(find.text('Document Intelligence'), findsOneWidget);
+    expect(find.byTooltip('Add PDF'), findsOneWidget);
   });
 }

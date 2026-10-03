@@ -1,5 +1,9 @@
 import 'package:flutter/foundation.dart';
 
+/// Runtime configuration for the backend API.
+///
+/// Values are supplied at build time via `--dart-define`, e.g.
+/// `flutter run --dart-define=API_TOKEN=... --dart-define=API_BASE_URL=...`.
 class ApiConfig {
   ApiConfig._();
 
@@ -14,6 +18,7 @@ class ApiConfig {
         : 'http://127.0.0.1:8000';
   }
 
+  /// Throws a [StateError] when required configuration is missing.
   static void validate() {
     if (apiToken.isEmpty) {
       throw StateError(

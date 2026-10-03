@@ -3,19 +3,17 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 
-import 'api_config.dart';
-import 'models.dart';
+import '../../core/config/api_config.dart';
+import '../models/chat_models.dart';
+import '../models/document_item.dart';
+import '../models/page_evidence.dart';
+import '../models/query_result.dart';
+import 'api_exception.dart';
 
-class ApiException implements Exception {
-  const ApiException(this.statusCode, this.message);
-
-  final int statusCode;
-  final String message;
-
-  @override
-  String toString() => message;
-}
-
+/// Thin, dependency-free client for the document intelligence backend.
+///
+/// The client owns an [http.Client] and must be [close]d by its owner when no
+/// longer needed.
 class DocumentApi {
   DocumentApi({http.Client? client}) : _client = client ?? http.Client() {
     ApiConfig.validate();

@@ -3,9 +3,11 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:pdfrx/pdfrx.dart';
 
-import 'document_api.dart';
-import 'models.dart';
+import '../../data/api/document_api.dart';
+import '../../data/models/citation_item.dart';
 
+/// Displays the raw source PDF, optionally highlighting a citation's bounding
+/// boxes on the referenced page.
 class SourcePdfPage extends StatefulWidget {
   const SourcePdfPage({
     super.key,
@@ -41,7 +43,11 @@ class _SourcePdfPageState extends State<SourcePdfPage> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.documentName),
+            Text(
+              widget.documentName,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
             if (citation != null)
               Text(
                 'Page ${citation.page} · lines ${citation.startLine}-${citation.endLine}',

@@ -40,6 +40,9 @@ dependencies:
   flutter_markdown_plus: ^1.0.12
   google_fonts: ^8.2.1
   pdfrx: ^2.6.1
+  firebase_core: ^4.15.0
+  flutter_launcher_icons: ^0.14.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -91,3 +94,18 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_launcher_icons:
+  image_path: assets/dia-icon.png
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: assets/dia-icon.png
+  windows:
+    generate: true
+    image_path: assets/dia-icon.png
+  macos:
+    generate: true
+    image_path: assets/dia-icon.png
