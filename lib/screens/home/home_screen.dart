@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:documentintelligence/screens/auth/profile_screen.dart';
 
 import '../../data/api/document_api.dart';
 import '../../models/document.dart';
@@ -47,6 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
       _loading = false;
       _error = error.message;
     }
+  }
+
+  void _navigateToProfile() {
+    Navigator.push(context, ProfileScreen.route());
   }
 
   @override
@@ -364,6 +370,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).pop();
           _seeAllDocuments();
         },
+        onProfile: _navigateToProfile,
       ),
       body: SafeArea(
         bottom: false,

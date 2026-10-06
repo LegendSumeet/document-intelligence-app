@@ -57,22 +57,24 @@ class DefaultFirebaseOptions {
     projectId: 'document-intelligence-ai-app',
     storageBucket: 'document-intelligence-ai-app.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBkc5NUNm2fJrg8o1lHNf1T446Ug1Z7rNM',
     appId: '1:328106252804:ios:56a2c6fc328e8d6446b351',
     messagingSenderId: '328106252804',
     projectId: 'document-intelligence-ai-app',
     storageBucket: 'document-intelligence-ai-app.firebasestorage.app',
+    androidClientId: '328106252804-dd04c4rgmktfh72o48vgdju12jvpgmlh.apps.googleusercontent.com',
+    iosClientId: '328106252804-dhigp3jkiql17ujfdj81g7fbffkvtjrr.apps.googleusercontent.com',
     iosBundleId: 'com.legendsumeet.documentintelligence',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBkc5NUNm2fJrg8o1lHNf1T446Ug1Z7rNM',
     appId: '1:328106252804:ios:56a2c6fc328e8d6446b351',
     messagingSenderId: '328106252804',
     projectId: 'document-intelligence-ai-app',
     storageBucket: 'document-intelligence-ai-app.firebasestorage.app',
+    androidClientId: '328106252804-dd04c4rgmktfh72o48vgdju12jvpgmlh.apps.googleusercontent.com',
+    iosClientId: '328106252804-dhigp3jkiql17ujfdj81g7fbffkvtjrr.apps.googleusercontent.com',
     iosBundleId: 'com.legendsumeet.documentintelligence',
   );
 

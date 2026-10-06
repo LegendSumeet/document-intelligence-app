@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:documentintelligence/screens/auth/profile_screen.dart';
 
 /// Navigation drawer shown from the sidebar control on the home screen.
 class AskDocsDrawer extends StatelessWidget {
@@ -6,14 +8,17 @@ class AskDocsDrawer extends StatelessWidget {
     super.key,
     required this.onNewChat,
     required this.onDocuments,
+    required this.onProfile,
   });
 
   final VoidCallback onNewChat;
   final VoidCallback onDocuments;
+  final VoidCallback onProfile;
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    final user = FirebaseAuth.instance.currentUser;
 
     return Drawer(
       child: SafeArea(
@@ -41,6 +46,13 @@ class AskDocsDrawer extends StatelessWidget {
               title: const Text('Documents'),
               onTap: onDocuments,
             ),
+            if (user != null) ...[
+              ListTile(
+                leading: const Icon(Icons.person_outline),
+                title: const Text('Profile'),
+                onTap: onProfile,
+              ),
+            ],
           ],
         ),
       ),

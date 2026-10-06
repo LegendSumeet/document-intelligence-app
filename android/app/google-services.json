@@ -12,7 +12,28 @@
           "package_name": "com.legendsumeet.documentintelligence"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "328106252804-dd04c4rgmktfh72o48vgdju12jvpgmlh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.legendsumeet.documentintelligence",
+            "certificate_hash": "fea547886de6f820c77c810903f0c38bcfab753d"
+          }
+        },
+        {
+          "client_id": "328106252804-k6m58honbtrnpifknaoanakbdssd4enb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.legendsumeet.documentintelligence",
+            "certificate_hash": "0a675e4145f7f99f9c89dfc16328a0b06973b4a1"
+          }
+        },
+        {
+          "client_id": "328106252804-8aj7ut73h9imgrg8f4lq7b6aldtq0ne1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAim2sJ7ItZyQ8ns0giN20Za9bLk8IgKao"
@@ -20,7 +41,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328106252804-8aj7ut73h9imgrg8f4lq7b6aldtq0ne1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "328106252804-dhigp3jkiql17ujfdj81g7fbffkvtjrr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.legendsumeet.documentintelligence"
+              }
+            }
+          ]
         }
       }
     }
