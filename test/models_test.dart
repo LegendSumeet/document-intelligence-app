@@ -3,9 +3,87 @@ import 'package:documentintelligence/data/models/citation_item.dart';
 import 'package:documentintelligence/data/models/document_item.dart';
 import 'package:documentintelligence/data/models/page_evidence.dart';
 import 'package:documentintelligence/data/models/query_result.dart';
+import 'package:documentintelligence/models/document.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('formats human relative times for the status line', () {
+    final now = DateTime(2026, 10, 4, 18, 0);
+
+    expect(
+      relativeTime(now.subtract(const Duration(seconds: 20)), now: now),
+      'just now',
+    );
+    expect(
+      relativeTime(now.subtract(const Duration(minutes: 5)), now: now),
+      '5m ago',
+    );
+    expect(
+      relativeTime(now.subtract(const Duration(hours: 2)), now: now),
+      '2h ago',
+    );
+    expect(
+      relativeTime(now.subtract(const Duration(days: 1)), now: now),
+      'yesterday',
+    );
+    expect(
+      relativeTime(now.subtract(const Duration(days: 3)), now: now),
+      '3 days ago',
+    );
+    expect(
+      relativeTime(now.subtract(const Duration(days: 9)), now: now),
+      'a week ago',
+    );
+  });
+
+  test('analyzed documents read as a single unambiguous status', () {
+    final analyzed = Document.fromItem(
+      DocumentItem.fromJson({
+        'id': 'doc-1',
+        'name': 'SBI Card Statement.pdf',
+        'status': 'completed',
+        'pageNum': 7,
+        'retrievalReady': true,
+        'lastAnalyzed': DateTime.now()
+            .subtract(const Duration(hours: 2))
+            .toIso8601String(),
+      }),
+    );
+
+    expect(analyzed.status, AnalysisStatus.analyzed);
+    expect(analyzed.statusLabel, 'Analyzed 2h ago');
+  });
+
+  test('collapses UUID filenames to a generic title', () {
+    final uuid = Document.fromItem(
+      DocumentItem.fromJson({
+        'id': 'doc-1',
+        'name': 'cb23eabc-0726-40fd-8a54-28c440fdadd3.pdf',
+        'status': 'completed',
+        'pageNum': 4,
+        'retrievalReady': true,
+      }),
+    );
+
+    expect(uuid.hasGenericName, isTrue);
+    expect(uuid.displayName, 'Document');
+    expect(uuid.fullName, 'cb23eabc-0726-40fd-8a54-28c440fdadd3.pdf');
+  });
+
+  test('builds metadata with file size when provided', () {
+    final doc = Document.fromItem(
+      DocumentItem.fromJson({
+        'id': 'doc-1',
+        'name': 'report.pdf',
+        'status': 'completed',
+        'pageNum': 7,
+        'retrievalReady': true,
+        'sizeBytes': 2516582,
+      }),
+    );
+
+    expect(doc.metaLabel, 'PDF · 7 pages · 2.4 MB');
+  });
   test('requires completed status and retrieval readiness', () {
     final ready = DocumentItem.fromJson({
       'doc_id': 'doc-ready',
@@ -63,7 +141,7 @@ void main() {
       text: 'Evidence',
     );
 
-    expect(citation.label, 'test2.pdf · p. 9 · L4–8');
+    expect(citation.label, 'Page 9 · Lines 4–8');
   });
 
   test('replaces citation tags with inline source labels', () {

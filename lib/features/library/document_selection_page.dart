@@ -138,7 +138,7 @@ class _DocumentSelectionPageState extends State<DocumentSelectionPage> {
         final wide = constraints.maxWidth >= 900;
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Document Intelligence'),
+            title: const Text('AskDocs'),
             actions: [
               Tooltip(
                 message: _healthy == true ? 'API connected' : 'API unavailable',

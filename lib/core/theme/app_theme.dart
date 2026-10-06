@@ -100,15 +100,9 @@ class AppTheme {
         )
         .apply(bodyColor: colors.onSurface, displayColor: colors.onSurface);
     final monoLabels = textTheme.copyWith(
-      labelLarge: GoogleFonts.jetBrainsMono(
-        textStyle: textTheme.labelLarge,
-      ),
-      labelMedium: GoogleFonts.jetBrainsMono(
-        textStyle: textTheme.labelMedium,
-      ),
-      labelSmall: GoogleFonts.jetBrainsMono(
-        textStyle: textTheme.labelSmall,
-      ),
+      labelLarge: GoogleFonts.jetBrainsMono(textStyle: textTheme.labelLarge),
+      labelMedium: GoogleFonts.jetBrainsMono(textStyle: textTheme.labelMedium),
+      labelSmall: GoogleFonts.jetBrainsMono(textStyle: textTheme.labelSmall),
     );
 
     final base = ThemeData(
@@ -129,9 +123,7 @@ class AppTheme {
         scrolledUnderElevation: 0,
         centerTitle: false,
         toolbarHeight: 64,
-        shape: Border(
-          bottom: BorderSide(color: colors.outlineVariant),
-        ),
+        shape: Border(bottom: BorderSide(color: colors.outlineVariant)),
         titleTextStyle: textTheme.titleLarge?.copyWith(
           color: colors.onSurface,
           fontWeight: FontWeight.w600,
@@ -151,7 +143,10 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: colors.surfaceContainerLow,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 14,
+          vertical: 12,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: colors.outlineVariant),

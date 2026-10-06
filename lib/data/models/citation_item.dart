@@ -37,7 +37,7 @@ class CitationItem {
   final List<List<double>> boundingBoxes;
   final bool locationVerified;
 
-  String get label => '$document · p. $page · L$startLine–$endLine';
+  String get label => 'Page $page · Lines $startLine–$endLine';
 
   String get inlineLabel {
     final withoutExtension = document.toLowerCase().endsWith('.pdf')

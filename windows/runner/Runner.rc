@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "legendsumeet" "\0"
-            VALUE "FileDescription", "documentintelligence" "\0"
+            VALUE "FileDescription", "AskDocs" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "documentintelligence" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 legendsumeet. All rights reserved." "\0"
             VALUE "OriginalFilename", "documentintelligence.exe" "\0"
-            VALUE "ProductName", "documentintelligence" "\0"
+            VALUE "ProductName", "AskDocs" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

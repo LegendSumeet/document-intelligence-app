@@ -15,8 +15,9 @@ import 'api_exception.dart';
 /// The client owns an [http.Client] and must be [close]d by its owner when no
 /// longer needed.
 class DocumentApi {
-  DocumentApi({http.Client? client}) : _client = client ?? http.Client() {
-    ApiConfig.validate();
+  DocumentApi({http.Client? client, bool validateConfig = true})
+    : _client = client ?? http.Client() {
+    if (validateConfig) ApiConfig.validate();
   }
 
   final http.Client _client;

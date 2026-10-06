@@ -1,11 +1,11 @@
 {
-    "name": "documentintelligence",
-    "short_name": "documentintelligence",
+    "name": "AskDocs",
+    "short_name": "AskDocs",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Ask anything about your documents with AskDocs.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

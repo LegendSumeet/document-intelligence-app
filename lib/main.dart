@@ -13,5 +13,5 @@ Future<void> main() async {
       options: DefaultFirebaseOptions.currentPlatform,
     );
   }
-  runApp(const DocumentIntelligenceApp());
+  runApp(const AskDocsApp());
 }

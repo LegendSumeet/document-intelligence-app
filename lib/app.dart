@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 
-import 'core/theme/app_theme.dart';
-import 'features/library/document_selection_page.dart';
+import 'data/api/document_api.dart';
+import 'screens/home/home_screen.dart';
+import 'theme/app_theme.dart';
 
-/// Root widget: wires up theming and the initial route.
-class DocumentIntelligenceApp extends StatelessWidget {
-  const DocumentIntelligenceApp({super.key});
+/// AskDocs — ask anything about your documents.
+///
+/// The app launches directly into Home. Theme follows the system setting.
+class AskDocsApp extends StatelessWidget {
+  const AskDocsApp({super.key, this.api});
+
+  /// Overrides the backend client; used by tests.
+  final DocumentApi? api;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Document Intelligence',
+      title: 'AskDocs',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      themeMode: ThemeMode.dark,
-      home: const DocumentSelectionPage(),
+      themeMode: ThemeMode.system,
+      home: HomeScreen(api: api),
     );
   }
 }

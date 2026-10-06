@@ -1,16 +1,16 @@
-# Document Intelligence Flutter Client
+# AskDocs Flutter Client
 
 Flutter client for the protected FastAPI service in
 `/home/sumeet/Desktop/document-intelligence-ai`.
 
-Native application identifier:
+Internal native application identifier:
 
 ```text
 com.legendsumeet.documentintelligence
 ```
 
-The Dart package name remains `documentintelligence` because Dart package names
-cannot contain dots.
+The Dart package name remains `documentintelligence` as an internal package
+identifier.
 
 ## Run Locally
 
